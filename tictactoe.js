@@ -17,17 +17,17 @@ var winningConditions = [
 	[2,4,6]
 ]
 
-// global variables
+// globale variablen
 var currentBoard; // status des boards
 var turn; // welcher zug?
 var player; // wer ist dran -  "x" oder "o"
 var opponent; // wer ist der gegner - "computer" oder "friend"
 
 function reset() {
-	// reset board
+	// board zurücksetzen
 	currentBoard = ["","","","","","","","",""];
 	turn = 0;
-	hideOptions(false); // show options
+	hideOptions(false); // zeige optionen
 	document.getElementById('reset').addEventListener('click',reset); // wenn reset element geklickt wird, führe reset function aus
 	document.getElementById('start').addEventListener('click',start); // wenn start element geklickt wird, führe start function aus
 	document.getElementById('winner').innerHTML = ""; // leeres winner element
@@ -76,7 +76,7 @@ function eachTurn(file) {
 	// draw mark
 	var f = document.getElementById(file)
 	f.innerHTML = player.toUpperCase(); // player ist x oder o (upperCase = X oder O)
-	// remove option to click
+	// entferne option zu klicken
 	f.removeEventListener("click", playerTurn);
 	// update board                   0   1  2  3 4  5  6  7  8
 	currentBoard[file] = player; // ["x","","","","","","","",""];
@@ -158,7 +158,7 @@ function findBestMove() {
 	// und was hat der spieler für felder
 	var currentPlayerFiles = getCurrentFilesFor(playerMark);
 	
-	// check if computer can win
+	// gucke ob computer gewinnen kann
 	// remainingFiles = [2,3]
 	// currentComputerFiles [0,1]
 	for (remainingFile of remainingFiles) {
@@ -174,7 +174,7 @@ function findBestMove() {
 		} 
 	}
 	// hier habe ich leider keinen möglichen gewinn gefunden
-	// check if player can win
+	// gucke ob spieler gewinnen kann
 	for (remainingFile of remainingFiles) {
 		var potentialFiles = currentPlayerFiles.slice(); 
 		potentialFiles.push(remainingFile);
@@ -184,7 +184,7 @@ function findBestMove() {
 		}
 	}
 	// keinen tollen move gefunden
-	// if for nothing better we choose one randomly
+	// wenn es nichts besseres gibt suchen wir uns einen random verfügbaren move von den remaining files
 	return remainingFiles[Math.floor(Math.random() * remainingFiles.length)];
 }
 
