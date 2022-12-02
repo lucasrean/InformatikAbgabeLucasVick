@@ -1,0 +1,72 @@
+/* Tic-Tac-Toe Playing Board */
+td {
+	width: 100px;
+	height: 100px;
+	margin-left: auto;
+    margin-right: auto;
+    color: beige;
+    font-size: 60px;
+    text-align: center;
+    padding: 8px;
+    background-color: green;
+
+
+
+}
+
+
+body {
+
+	background-color: beige;
+}
+
+.vertical {
+	border-left: 3px solid beige;
+	border-right: 3px  solid beige;
+}
+
+.horizontal  {
+	border-top: 3px  solid beige;
+	border-bottom: 3px solid beige;
+}
+
+
+h1{
+	text-align: center;
+	color:green;
+
+}
+
+
+
+fieldset{
+	text-align: center;
+	color: darkred;
+	background-color: cornsilk;
+}
+
+table{
+
+	margin-left: auto;
+    margin-right: auto;
+    color: black;
+}
+
+button  {
+
+	color: green;
+	width: 80px;
+	height: 80px;
+	font-size: 20px;
+	margin: auto;
+
+}
+
+#winner {
+
+	color: darkslategray;
+	font-size: 30px;
+	text-align: center;
+}
+
+
